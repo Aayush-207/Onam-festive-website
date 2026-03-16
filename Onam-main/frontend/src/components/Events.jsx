@@ -83,23 +83,28 @@ const Events = () => {
   const memoizedEvents = useMemo(() => upcomingEvents, [])
 
   return (
-    <section id="events" className="section-padding bg-white" aria-label="Upcoming Onam Events">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 font-heading">
-            Upcoming Events
-          </h2>
-          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto mt-3 sm:mt-4 font-sans px-4">
-            Discover and participate in exciting Onam celebrations, competitions, and cultural activities throughout the year.
-          </p>
-        </div>
+    <section id="events" className="bg-teal-600 relative overflow-hidden" style={{backgroundImage: 'url(/upcoming.jpg?v=' + Date.now() + ')', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}} aria-label="Upcoming Onam Events">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
-        {/* Events List */}
-        <div className="space-y-8 sm:space-y-12">
-          {memoizedEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
+      {/* Header */}
+      <div className="section-padding relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-heading drop-shadow-lg">
+              Upcoming Events
+            </h2>
+            <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto mt-3 sm:mt-4 font-sans px-4 drop-shadow-md">
+              Discover and participate in exciting Onam celebrations, competitions, and cultural activities throughout the year.
+            </p>
+          </div>
+
+          {/* Events List */}
+          <div className="space-y-8 sm:space-y-12">
+            {memoizedEvents.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
