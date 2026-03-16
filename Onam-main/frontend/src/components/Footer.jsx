@@ -175,24 +175,24 @@ const Footer = ({ scrollToSection }) => {
         {/* Contact Information */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 md:space-x-8 mb-6 sm:mb-8 text-gray-300">
           <ContactLink 
-            href="mailto:gauravkhadelwal205@gmail.com"
+            href="mailto:aayushraut2006@gmail.com"
             icon={
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M0 3v18c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2H2C.9 1 0 1.9 0 3zm22 0L12 12 2 3h20zM2 19V7l10 9 10-9v12H2z"/>
               </svg>
             }
           >
-            <span className="text-sm sm:text-base">gauravkhadelwal205@gmail.com</span>
+            <span className="text-sm sm:text-base">aayushraut2006@gmail.com</span>
           </ContactLink>
           <ContactLink 
-            href="tel:+91-8955142954"
+            href="tel:+91-9970065446"
             icon={
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
             }
           >
-            <span className="text-sm sm:text-base">+91 895 514 2954</span>
+            <span className="text-sm sm:text-base">+91 997 006 5446</span>
           </ContactLink>
         </div>
 
