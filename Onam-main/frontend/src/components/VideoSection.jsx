@@ -100,10 +100,14 @@ const VideoSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
+      className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      style={{backgroundImage: 'url(/Sadhya.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}
       aria-label="Onam Celebration Video"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Video Container */}
         <div className="relative w-full max-w-6xl mx-auto">
           {/* Video Background/Thumbnail */}

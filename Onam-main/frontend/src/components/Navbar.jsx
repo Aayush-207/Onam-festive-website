@@ -77,6 +77,18 @@ const Logo = memo(() => {
       className="flex items-center space-x-2 transition-transform duration-200 focus:outline-none rounded-lg p-1 hover:scale-105 sm:hover:scale-105"
       aria-label="Navigate to home page"
     >
+    <span className="flex items-center justify-center p-2 h-auto">
+      <OptimizedImage 
+        src="/logo2.png" 
+        alt="Logo" 
+        className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 object-contain rounded-full flex-shrink-0"
+        style={{mixBlendMode: 'multiply'}}
+        loading="eager"
+        width={48}
+        height={48}
+        sizes="(max-width: 640px) 24px, (max-width: 768px) 28px, (max-width: 1024px) 32px, (max-width: 1280px) 40px, 48px"
+      />
+    </span>
     <OptimizedImage 
       src="/logo.png" 
       alt="ONAM Logo" 
@@ -207,7 +219,7 @@ const Navbar = ({ currentSection, scrollToSection }) => {
   const navbarClasses = useMemo(() => {
     const baseClasses = 'fixed top-0 left-0 right-0 z-50 transition-all duration-300'
     const backgroundClasses = (isScrolled || !isHomePage)
-      ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+      ? 'bg-white/20 backdrop-blur-md' 
       : 'bg-transparent'
     
     return `${baseClasses} ${backgroundClasses}`
@@ -221,7 +233,7 @@ const Navbar = ({ currentSection, scrollToSection }) => {
   }, [])
 
   return (
-    <nav className={navbarClasses} role="navigation" aria-label="Main navigation">
+    <nav className={navbarClasses} role="navigation" aria-label="Main navigation" style={{backgroundImage: (isScrolled || !isHomePage) ? 'linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0))' : 'none'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 min-h-[64px]">
           {/* Logo */}
@@ -274,7 +286,7 @@ const Navbar = ({ currentSection, scrollToSection }) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && showMobileMenu && (
-          <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-lg mt-2 py-2 mx-0">
+          <div className="bg-white/20 backdrop-blur-md rounded-lg mt-2 py-2 mx-0">
             <div className="flex flex-col">
               {memoizedNavItems.map((item) => {
                 const isActive = item.type === 'route' 

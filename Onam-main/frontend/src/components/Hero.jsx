@@ -448,12 +448,15 @@ const Hero = () => {
       </section>
       
       {/* About Onam Section */}
-      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6 font-heading">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{backgroundImage: 'url(/Sadhya.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 font-heading drop-shadow-lg">
             The National Festival of Kerala
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto font-sans px-2">
+          <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto font-sans px-2 drop-shadow-md">
             Onam is a nostalgia that brings back memories from childhood and the simple ways of life that prevailed in the villages back in the day. It is the celebration of the myth of Mahabali – the demon king who once ruled the land and is believed to visit his old subjects every year around this time. Onam is also an agricultural festival that celebrates the rich harvest of the land, thus symbolising joy and prosperity.
           </p>
         </div>
