@@ -214,6 +214,9 @@ const Sadya = () => {
 
   return (
     <section id="sadya" className="section-padding relative overflow-hidden" aria-label="Traditional Onam Feast" style={{backgroundImage: 'url(/SadhyaMain.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/30" aria-hidden="true"></div>
+      
       {/* Food Pattern Background */}
       <div className="absolute top-0 left-0 w-full h-16 sm:h-32 bg-gradient-to-b from-orange-100/30 to-transparent" aria-hidden="true"></div>
       <div className="absolute bottom-0 right-0 w-full h-16 sm:h-32 bg-gradient-to-t from-yellow-100/30 to-transparent" aria-hidden="true"></div>

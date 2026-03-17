@@ -77,11 +77,12 @@ const Layout = () => {
   // Determine if we're on home page (no top padding needed for hero section)
   const isHomePage = location.pathname === '/'
   const isRitualsPage = location.pathname === '/rituals'
+  const isShoppingPage = location.pathname === '/shopping'
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-red-50 overflow-x-hidden">
-      {!isRitualsPage && <Navbar currentSection={currentSection} scrollToSection={scrollToSection} />}
-      <main className={isHomePage ? '' : isRitualsPage ? '' : 'pt-16'}>
+      {!isRitualsPage && !isShoppingPage && <Navbar currentSection={currentSection} scrollToSection={scrollToSection} />}
+      <main className={isHomePage ? '' : (isRitualsPage || isShoppingPage) ? '' : 'pt-16'}>
         <Outlet />
       </main>
       <Footer scrollToSection={scrollToSection} />
