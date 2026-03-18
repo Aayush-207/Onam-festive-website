@@ -249,30 +249,32 @@ const Rituals = () => {
       </div>
 
       {/* Hero Section - Full Screen */}
-      <section className="relative h-screen w-full flex flex-col items-center justify-center px-4">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-yellow-50 to-pink-100 -z-10"></div>
-        <div className="absolute inset-0 background-placeholder -z-10" style={{
-          backgroundImage: 'url(/RitualsBackground.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.15
-        }}></div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-onam-green/10 rounded-full blur-3xl" style={{animation: 'float 6s ease-in-out infinite'}}></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-onam-gold/10 rounded-full blur-3xl" style={{animation: 'float 8s ease-in-out infinite'}}></div>
+      <section className="relative h-screen w-full flex flex-col items-center justify-center px-4 overflow-hidden">
+        {/* Background Video */}
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{zIndex: 0}}
+          autoPlay 
+          loop 
+          muted
+          playsInline
+        >
+          <source src="/rituals.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark Overlay for Text Visibility */}
+        <div className="absolute inset-0 bg-black/50" style={{zIndex: 5}}></div>
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 mb-8 font-heading leading-tight" style={{animation: 'slideUp 0.8s ease-out'}}>
-            <span className="bg-gradient-to-r from-onam-green via-onam-gold to-onam-red bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 font-heading leading-tight drop-shadow-lg" style={{animation: 'slideUp 0.8s ease-out'}}>
+            <span className="drop-shadow-lg">
               Onam Rituals
             </span>
             <br />
-            <span className="text-gray-800">&amp; Traditions</span>
+            <span className="drop-shadow-lg">&amp; Traditions</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto" style={{animation: 'slideUp 0.8s ease-out 0.2s both'}}>
+          <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-md" style={{animation: 'slideUp 0.8s ease-out 0.2s both'}}>
             Onam is the biggest harvest festival of the Indian state of Kerala. It celebrates the legendary return of the benevolent king Mahabali to visit his people once every year. The festival usually lasts 10 days and includes many cultural rituals.
           </p>
         </div>

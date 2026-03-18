@@ -6,7 +6,7 @@ const secondaryLinks = [
   { id: 'home', label: 'HOME', path: '/', type: 'scroll' },
   { id: 'sadya', label: 'SADYA', path: '/sadya', type: 'scroll' },
   { id: 'events', label: 'EVENTS', path: '/events', type: 'scroll' },
-  { id: 'under-development', label: 'COMING SOON', path: '/coming-soon', type: 'route' }
+  { id: 'memories', label: 'MEMORIES', path: '/memories', type: 'scroll' }
 ]
 
 const socialLinks = [

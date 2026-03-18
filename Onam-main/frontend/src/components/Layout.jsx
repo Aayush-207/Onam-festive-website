@@ -19,7 +19,6 @@ const Layout = () => {
   const currentSection = useMemo(() => {
     const path = location.pathname
     if (path === '/') return 'home'
-    if (path === '/coming-soon') return 'under-development'
     return 'home'
   }, [location.pathname])
 
@@ -40,12 +39,7 @@ const Layout = () => {
   // Navigation handler for Navbar - smart scrolling based on context
   const scrollToSection = useCallback((sectionId) => {
     // Sections that are on the home page (scroll navigation)
-    const homePageSections = ['home', 'sadya', 'events', 'memories', 'under-development']
-    
-    // Sections that have separate pages (route navigation)
-    const routeMap = {
-      'under-development': '/coming-soon'
-    }
+    const homePageSections = ['home', 'sadya', 'events', 'memories', 'explore']
     
     // If it's a home page section
     if (homePageSections.includes(sectionId)) {
@@ -62,17 +56,8 @@ const Layout = () => {
           scrollToElement(elementId)
         }, 300)
       }
-    } else if (routeMap[sectionId]) {
-      // Navigate to separate page (scroll to top happens in useEffect)
-      const route = routeMap[sectionId]
-      if (route !== location.pathname) {
-        navigate(route)
-      } else {
-        // If already on the page, just scroll to top
-        smoothScrollToTop()
-      }
     }
-  }, [location.pathname, navigate, smoothScrollToTop, scrollToElement])
+  }, [location.pathname, navigate, scrollToElement])
 
   // Determine if we're on home page (no top padding needed for hero section)
   const isHomePage = location.pathname === '/'

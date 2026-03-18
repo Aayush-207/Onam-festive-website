@@ -1,203 +1,195 @@
-# Onam Festival Website
+# 🎉 Onam Festival Website
 
-A full-stack web application for the Onam Festival celebration at MIT ADT University, featuring event registration, traditional shopping, and cultural information. Built with React, Node.js, Express, and MongoDB.
+<div align="center">
 
-## 📋 Table of Contents
+**A modern full-stack web application for the Onam Festival celebration**
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Running the Application](#-running-the-application)
-- [Project Structure](#-project-structure)
-- [Development](#-development)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
-- [Security](#-security)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=flat-square&logo=react)](https://react.dev)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js)](https://nodejs.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Latest-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 
-## ✨ Features
+</div>
 
-### Core Features
-- ✅ **Event Registration**: Students can register for Onam events with order management
-- ✅ **Shopping Cart**: Traditional Onam shopping items with cart functionality
-- ✅ **Email Confirmation**: Automated email confirmations for registrations
-- ✅ **Responsive Design**: Fully responsive design optimized for all devices
-- ✅ **Performance Optimized**: Lighthouse score 95+ with optimized images and code splitting
-- ✅ **Accessibility**: WCAG 2.1 compliant with ARIA labels and keyboard navigation
+---
 
-### Technical Features
-- ✅ **Error Boundaries**: Graceful error handling with React Error Boundaries
-- ✅ **Skeleton Loaders**: Loading states for better UX
-- ✅ **Rate Limiting**: API rate limiting to prevent abuse
-- ✅ **Input Validation**: Comprehensive client and server-side validation
-- ✅ **Security Headers**: Production-ready security headers
-- ✅ **Code Splitting**: Lazy loading for optimal performance
-- ✅ **Image Optimization**: WebP support and responsive images
-- ✅ **Video Optimization**: Optimized video loading with fallbacks
+## ✨ Key Features
+
+| Feature | Details |
+|---------|---------|
+| 🛍️ **Shopping Cart** | Browse & purchase traditional Onam items |
+| 📝 **Event Registration** | Register for Onam celebrations with order management |
+| 📧 **Email Confirmations** | Automated email notifications for registrations |
+| 🎨 **Responsive Design** | Optimized for all devices with 95+ Lighthouse score |
+| ♿ **Accessibility** | WCAG 2.1 compliant with keyboard navigation |
+| 🚀 **High Performance** | Code splitting, lazy loading, image optimization |
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React 18** - UI library
-- **React Router DOM 7** - Client-side routing
-- **Vite 7** - Build tool and dev server
-- **Tailwind CSS 3** - Utility-first CSS framework
-- **Context API** - State management
-- **Vitest** - Unit testing framework
+**Frontend** → React 18 | Vite 7 | Tailwind CSS 3 | React Router DOM 7  
+**Backend** → Node.js 18+ | Express.js 4 | MongoDB | Mongoose 8  
+**Deployment** → Netlify (Frontend) | Render/Vercel/Railway (Backend)
 
-### Backend
-- **Node.js 18+** - Runtime environment
-- **Express.js 4** - Web framework
-- **MongoDB** - Database
-- **Mongoose 8** - ODM for MongoDB
-- **Nodemailer 7** - Email service
-- **Express Validator** - Input validation
-- **Express Rate Limit** - Rate limiting middleware
+---
 
-### Deployment
-- **Netlify** - Frontend hosting
-- **Render/Vercel/Railway** - Backend hosting options
-- **MongoDB Atlas** - Cloud database option
+## 📋 Quick Start
 
-## 📦 Prerequisites
+### Prerequisites
+- **Node.js** 20.0.0+
+- **npm** 10.0.0+
+- **MongoDB** (Atlas or local)
+- **Git**
 
-Before you begin, ensure you have the following installed:
-
-- **Node.js** 20.0.0 or higher (required for Vite 7 and React Router 7)
-- **npm** 10.0.0 or higher (or **yarn** 1.22.0+)
-- **MongoDB** (local installation or MongoDB Atlas account)
-- **Git** for version control
-
-### Verify Installation
+### Installation
 
 ```bash
-node --version  # Should be v20.0.0 or higher
-npm --version   # Should be v10.0.0 or higher
-mongod --version  # If using local MongoDB
-```
-
-## 🚀 Installation
-
-### 1. Clone the Repository
-
-```bash
+# Clone repository
 git clone <repository-url>
 cd Onam
-```
 
-### 2. Backend Setup
-
-```bash
+# Backend setup
 cd backend
 npm install
-```
+cp .env.example .env  # Configure your environment
 
-Create a `.env` file in the `backend` directory:
-
-```bash
-cp .env.example .env  # If .env.example exists, or create manually
-```
-
-Edit `.env` with your configuration (see [Configuration](#-configuration) section).
-
-### 3. Frontend Setup
-
-```bash
+# Frontend setup
 cd ../frontend
 npm install
+cp .env.example .env
 ```
 
-Create a `.env` file in the `frontend` directory:
+### Configuration
+
+**Backend `.env`:**
+```env
+NODE_ENV=development
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/onam-festival
+FRONTEND_URL=http://localhost:5173
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password
+```
+
+**Frontend `.env`:**
+```env
+VITE_API_BASE_URL=http://localhost:3000
+```
+
+### Running
 
 ```bash
-cp .env.example .env  # If .env.example exists, or create manually
+# Terminal 1 - Backend
+cd backend
+npm start
+
+# Terminal 2 - Frontend
+cd frontend
+npm run dev
 ```
 
-Edit `.env` with your API URL (see [Configuration](#-configuration) section).
+📍 Access at: `http://localhost:5173`
 
-## ⚙️ Configuration
+---
 
-### Backend Environment Variables
+## 📂 Project Structure
 
-Create a `.env` file in the `backend` directory with the following variables:
-
-#### Required Variables
-
-```env
-# Server Configuration
-NODE_ENV=development                    # Environment: development or production
-PORT=3000                                # Server port (default: 3000)
-
-# Database
-MONGODB_URI=mongodb://localhost:27017/onam-festival  # MongoDB connection string
-# For MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/onam-festival?retryWrites=true&w=majority
-
-# CORS Configuration
-FRONTEND_URL=http://localhost:5173      # Allowed frontend URLs (comma-separated for multiple)
-# Example for production: https://onammitadt.netlify.app,https://www.onammitadt.com
+```
+Onam-main/
+├── backend/
+│   ├── config/          # Database & app config
+│   ├── models/          # MongoDB schemas
+│   ├── routes/          # API endpoints
+│   ├── middleware/      # Auth, validation, logging
+│   ├── utils/           # Email, logger, rate limiting
+│   └── server.js        # Main server file
+│
+└── frontend/
+    ├── src/
+    │   ├── components/  # Reusable components
+    │   ├── pages/       # Page components
+    │   ├── context/     # State management
+    │   ├── hooks/       # Custom hooks
+    │   └── utils/       # Helpers & validation
+    └── public/          # Static assets
 ```
 
-#### Optional Variables
+---
 
-```env
-# Email Configuration (Required for email functionality)
-EMAIL_USER=your-email@gmail.com         # Email service username
-EMAIL_PASSWORD=your-app-password         # Email service password (use App Password for Gmail)
-EMAIL_SERVICE=gmail                     # Email service: gmail, outlook, yahoo, or custom
-EMAIL_FROM_NAME=Onam Festival - MIT ADT University  # Display name for emails
+## 🚀 Deployment
 
-# Custom SMTP Configuration (if not using Gmail)
-EMAIL_HOST=smtp.example.com             # SMTP host
-EMAIL_PORT=587                          # SMTP port (587 for TLS, 465 for SSL)
-EMAIL_SECURE=false                      # Use SSL/TLS (true for port 465, false for 587)
-EMAIL_DEBUG=false                       # Enable email debugging
+### Frontend (Netlify)
+1. Connect GitHub repository
+2. Build command: `npm run build`
+3. Publish directory: `dist`
 
-# Payment Configuration
-UPI_ID=your-upi-id@paytm                # UPI payment ID
+### Backend (Render/Vercel)
+1. Set environment variables
+2. Deploy from GitHub
+3. Set `npm start` as start command
 
-# Communication
-WHATSAPP_GROUP_LINK=https://chat.whatsapp.com/...  # WhatsApp group invite link
+---
 
-# Logging
-LOG_LEVEL=info                          # Log level: error, warn, info, debug (default: info)
+## ✅ Testing
 
-# Platform Detection (Auto-detected, but can be set manually)
-RENDER=true                              # Set to true if deploying on Render
-VERCEL=true                             # Set to true if deploying on Vercel
-RAILWAY_ENVIRONMENT=production         # Set if deploying on Railway
-HEROKU=true                             # Set to true if deploying on Heroku
+```bash
+# Frontend unit tests
+cd frontend
+npm run test
+
+# Backend API testing
+# Use Postman or similar tools with provided API collection
 ```
 
-### Frontend Environment Variables
+---
 
-Create a `.env` file in the `frontend` directory:
+## 🔒 Security Features
 
-#### Required Variables
+- ✅ Input validation (client & server)
+- ✅ Rate limiting on API endpoints
+- ✅ CORS protection
+- ✅ Secure password handling
+- ✅ XSS & CSRF protection
+- ✅ Security headers configured
 
-```env
-# API Configuration
-VITE_API_BASE_URL=http://localhost:3000  # Backend API URL
-# For production: https://your-backend-api.com
-```
+---
 
-#### Optional Variables
+## 📝 Environment Setup Guide
 
-```env
-# Payment Configuration (Optional - usually fetched from backend)
-VITE_UPI_ID=your-upi-id@paytm           # UPI payment ID (fallback if backend unavailable)
-```
+### Email Service (Gmail)
+1. Enable 2-factor authentication
+2. Generate [App Password](https://myaccount.google.com/apppasswords)
+3. Use app password in `.env`
 
-### MongoDB Setup
+### MongoDB Atlas
+1. Create cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Get connection string: `mongodb+srv://user:pass@cluster.mongodb.net/db`
+3. Add to `MONGODB_URI`
 
-#### Option 1: Local MongoDB
+---
 
-1. **Install MongoDB** on your system
-2. **Start MongoDB service:**
-   ```bash
+## 👥 Contributing
+
+We welcome contributions! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push and create a Pull Request
+
+---
+
+## 📄 License
+
+MIT License - See LICENSE file for details
+
+---
+
+<div align="center">
+
+**Made with ❤️ for Onam Festival**
+
+For issues & support → [GitHub Issues](https://github.com)
+
+</div>
    # Windows
    net start MongoDB
    

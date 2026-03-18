@@ -8,7 +8,8 @@ const navItems = [
   { id: 'home', label: 'Home', path: '/', type: 'scroll' },
   { id: 'sadya', label: 'Sadya', path: '/sadya', type: 'scroll' },
   { id: 'events', label: 'Events', path: '/events', type: 'scroll' },
-  { id: 'memories', label: 'Memories', path: '/memories', type: 'scroll' }
+  { id: 'memories', label: 'Memories', path: '/memories', type: 'scroll' },
+  { id: 'explore', label: 'Explore', path: '#explore', type: 'scroll' }
 ]
 
 // Memoized NavItem component - handles both scroll and route navigation
