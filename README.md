@@ -33,14 +33,6 @@ Frontend = React UI          Backend = Node.js + Express
 Display & Components    ←→  Payments | Orders | Emails | Database
 ```
 
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-```bash
-Node.js 20+  |  npm 10+  |  MongoDB  |  Git
-```
 
 
 📍 Visit: `http://localhost:5173`
