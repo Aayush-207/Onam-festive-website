@@ -35,9 +35,6 @@ Display & Components    ←→  Payments | Orders | Emails | Database
 
 
 
-📍 Visit: `http://localhost:5173`
-
----
 
 ## 🔒 Security
 
